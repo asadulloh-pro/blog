@@ -89,6 +89,7 @@ const { title, description, image = "/astro-micro.jpg" } = Astro.props;
     lightThemeButton?.addEventListener("click", () => {
       localStorage.setItem("theme", "light");
       toggleTheme(false);
+      document.documentElement.setAttribute("data-theme", "light-plus")
       updateThemeButtons();
     });
 
@@ -96,13 +97,16 @@ const { title, description, image = "/astro-micro.jpg" } = Astro.props;
     darkThemeButton?.addEventListener("click", () => {
       localStorage.setItem("theme", "dark");
       toggleTheme(true);
+      document.documentElement.setAttribute("data-theme", "dark-plus")
       updateThemeButtons();
+      
     });
 
     const systemThemeButton = document.getElementById("system-theme-button");
     systemThemeButton?.addEventListener("click", () => {
       localStorage.setItem("theme", "system");
       toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.setAttribute("data-theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark-plus" : "light-plus")
       updateThemeButtons();
     });
 
