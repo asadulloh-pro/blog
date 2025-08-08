@@ -4,6 +4,7 @@ description: "Bu postda typescript (generic type) ni react komponentlarida qanda
 date: "2025-07-10"
 draft: false
 tags:
+  - React
   - Typescript
 ---
 
@@ -48,14 +49,12 @@ import React from "react";
 - items: { id: string }[];
 - renderItem: (item: { id: string }) => React.ReactNode;
 -}
-
 +interface TableProps<T> {
 +  items: T[];
 +  renderItem: (item: T) => React.ReactNode;
 +}
 
 -export const Table = (props: TableProps) => {
-
 +export const Table = <T,>(props: TableProps<T>) => {
   return null;
 };
