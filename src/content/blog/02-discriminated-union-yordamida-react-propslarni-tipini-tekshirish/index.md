@@ -1,5 +1,5 @@
 ---
-title: "React’da Props Turlarini Discriminated Union orqali Aniqlash"
+title: "Discriminated Union yordamida React props'larni tipini tekshirish"
 description: "React komponentida props ni tiplari bilan ishalshda aqiliroq yo'lni tutish kerak va bu post shu haqida"
 date: "2025-08-06"
 draft: false
